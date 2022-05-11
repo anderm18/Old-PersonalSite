@@ -6,21 +6,15 @@ import Home from './pages/Home';
 
 import './App.css';
 
-
-
 function App() {
-
   return (
-    
     <Router>
       <Footer/>
-      <NavigationBar />
-      <Routes>  
-          <Route  path ='/' exact component={Home}/>
-      </Routes>
-      <Routes>
-        <Route  path ='/home' exact component={Home}/>
-      </Routes>
+        <NavigationBar />
+          <Routes>  
+            <Route path ="/" element={<Home/>}/>
+            <Route path ='/home' element={<Home/>}/>
+          </Routes>
     </Router>
   );
 }
