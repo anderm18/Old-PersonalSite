@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ImageFadeIn from 'react-image-fade-in';
 import Myself from "../assets/me.png";
-import {Name, MainDescFirst, fixOrder, backLoop} from "./HomeStyle";
+import {Name, MainDescFirst, fixOrder} from "./HomeStyle";
 import { DecryptTitle as DTitle, DecryptText as DText } from "../components/textDecrypt/decrypt";
 import VideoLooper from 'react-video-looper';
 import vid from '../assets/tri.webm';
@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <fixOrder>
       
-      <VideoLooper source={vid} start={0.00} end={20.00} speed={1}/>
+      <VideoLooper source={vid} start={0.00} end={16.00} speed={1}/>
       <ImageFadeIn        
         style={{
           display: 'flex', 
