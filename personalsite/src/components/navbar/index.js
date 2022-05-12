@@ -3,14 +3,12 @@ import {
     NavigationBar,
     NavigationMenu,
     NavigationLink,
-    Bars,
 } from './Navigation';
 
 const Navigation = () => {
     return (
         <>
           <NavigationBar>
-              <Bars />
               <NavigationMenu>
                   <NavigationLink to='/home' activeStyle>
                       Home

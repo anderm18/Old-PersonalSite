@@ -5,7 +5,7 @@ import { DiReact } from "react-icons/di";
 
 const Footer = () => {
     return(
-    <div className="footer">
+    <div className="footer" style={{zIndex: '1'}}>
         <p>Created by Michael Anderson using React
                 <IconContext.Provider value={{ className: "shared-class", size: 20, style: { verticalAlign: 'middle'} }}>
                   <DiReact />

@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
 import ImageFadeIn from 'react-image-fade-in';
 import Myself from "../assets/me.png";
+import {Name, MainDescFirst, fixOrder, backLoop} from "./HomeStyle";
+import { DecryptTitle as DTitle, DecryptText as DText } from "../components/textDecrypt/decrypt";
+import VideoLooper from 'react-video-looper';
+import vid from '../assets/tri.webm';
 
 const Home = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'Left',
-        alignItems: 'Center',
-        height: '85vh',
-        verticalAlign: 'middle',
-        zIndex: '0'
-      }}
-    >
-      <ImageFadeIn width={500} height={500} src={Myself} />
-     
-      <p style={{
-        fontSize:'4vw',
-        verticalAlign: 'top',
-        right: '85vh',
-        height: '85vh',
-        justifyContent: 'Right'
-      }}>&nbsp; Michael J. Anderson</p>
-    </div>
+    <fixOrder>
+      
+      <VideoLooper source={vid} start={0.00} end={20.00} speed={1}/>
+      <ImageFadeIn        
+        style={{
+          display: 'flex', 
+          position: 'absolute',
+          top: '20%',
+          left: '40px'
+        }} width={700} height={700} src={Myself} />
+
+      <Name>
+        <DTitle text={"Michael J. Anderson"}/>
+      </Name>
+      <MainDescFirst>
+        <DText text={"Computer Science Student, Rensselaer Polytechnic Institute"}/>
+      </MainDescFirst>
+
+
+    </fixOrder>
   );
 };
   
