@@ -35,10 +35,11 @@ export const NavigationMenu = styled.div`
 export const NavigationLink = styled(NavLink)`
   color: #000000;
   display: flex;
+  font-weight: bold;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
-  opacity: 0.5;
+  opacity: 0.6;
   :hover {
     transition-delay: .1s; /* delays for 1 second */
     -webkit-transition-delay: .1s;

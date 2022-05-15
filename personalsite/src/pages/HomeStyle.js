@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styleC from 'styled-components';
 
-export const Name = styled.b`
+export const Name = styleC.b`
     display: flex;
     position: absolute;
     font-size: 45px;
@@ -12,7 +12,7 @@ export const Name = styled.b`
     
 `;
 
-export const backLoop = styled.div`
+export const backLoop = styleC.div`
     height: 100%;
     width: 100%;
     float: left;
@@ -22,29 +22,29 @@ export const backLoop = styled.div`
     
 `;
 
-export const fixOrder = styled.div`
+export const fixOrder = styleC.div`
     z-index: -1;
 `;
 
-export const MainDescFirst = styled.p`
-display: flex;
-position: absolute;
-font-size: 35px;
-justify-content: left;
-right: 100px;
-left: 1000px;
-min-width: 100px;
-top: 55%;
-font-family: "Lucida Console", "Courier New", monospace;
-  
+export const MainDescFirst = styleC.p`
+    display: flex;
+    position: absolute;
+    font-size: 35px;
+    justify-content: left;
+    right: 100px;
+    left: 1000px;
+    min-width: 100px;
+    top: 55%;
+    font-family: "Lucida Console", "Courier New", monospace; 
 `;
-export const MainDescSecond = styled.p`
-display: flex;
-position: relative;
-font-size: 35px;
-justify-content: left;
-right: 100px;
-left: 900px;
-top: 400px;
-font-family: "Lucida Console", "Courier New", monospace;
+
+export const MainDescSecond = styleC.p`
+    display: flex;
+    position: relative;
+    font-size: 35px;
+    justify-content: left;
+    right: 100px;
+    left: 900px;
+    top: 400px;
+    font-family: "Lucida Console", "Courier New", monospace;
 `;
