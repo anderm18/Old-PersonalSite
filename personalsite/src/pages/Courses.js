@@ -1,14 +1,23 @@
 import React from 'react';
-import VideoLooper from 'react-video-looper';
-import vid from '../assets/tri.webm';
+import { decodeIcon } from './Projects';
+import {Box, Title} from './ProjectStyle';
+import courses from '../assets/courses.json';
 
 const Courses = () => {
     return(
         <>
-        <VideoLooper source={vid} start={0.00} end={16.00}/>
-          <div>
-            Hello!
-          </div>
+
+          {courses.map(crs =>(
+            <Box>
+              <Title>
+                {crs.course}
+                
+                {crs.icons.map(ic => (<b>{decodeIcon(ic)}</b>))}
+                
+
+              </Title>
+            </Box>
+          ))};
         </>
     );
 };

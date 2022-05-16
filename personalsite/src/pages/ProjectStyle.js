@@ -3,7 +3,6 @@ import styleC from 'styled-components';
 export const Box = styleC.a`
     display: flex;
     padding-bottom: 30px;
-    min-width: 100px;
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
@@ -15,25 +14,32 @@ export const Box = styleC.a`
     text-decoration: none;
     color: #000000;
     border-radius: 25px;
+    transition: opacity 0.2s 0.2s;
     cursor: pointer;
     :hover {
         transition-delay: .1s; /* delays for 1 second */
         -webkit-transition-delay: .1s;
         opacity: 1.5;
-      }
+      } 
+`;
+
+export const inBox = styleC.div`
+
+
 `;
 
 export const Title = styleC.b`
-    position: absolute;
+    overflow: auto;
+    padding-right: 10px;
     padding-left: 10px;
     font-size: 30px;
-    padding-below: 30px;
+    
 `;
 
 export const Desc = styleC.p`
-    
-    margin-top: 40px;
-    padding-left: 10px;
+    font-weight: normal;
+    font-size: 25px;
+    font-family: "Lucida Console", "Courier New", monospace;
 `;
 
 

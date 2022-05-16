@@ -3,13 +3,13 @@
         "name" : "HASS Pathways, Project Lead",
         "desc" : "An Open Source interactive solution to allow new/current students at RPI to view their Humanities and Social Science required Graduation Pathways, as well create, edit, and plan out the rest of their pathway. Lead a group of four other passionate developers, as well as formulated the backend framework through AWS Lambda, AWS API Gateway, DynamoDB, and Netlify. Developed under the Guidance of Professor Bram van Heuveln. https://hasspathways.com/",
         "lk" : "https://github.com/anderm18/HASSPathways",
-	    "icon": ["py", "vu", "js", "ht", "cs", "aw", "ne"]
+	  "icon" : ["py", "vu", "js", "ht", "cs", "aw", "ne"]
     },
     {
-        "name": "Personal Portfolio Website",
-        "desc": "The website you are currently viewing. This is a personal Open Source project to display any revelant information/documentation, projects, and coursework. The site was written in React.js, and can be quickly updated via the Desktop Update Component, written in C++. The site is hosted on AWS through an S3 Bucket.",
-        "lk": "https://github.com/anderm18/PersonalSite",
-	    "icon": ["js", "rt", "cp", "aw"]
+        "name" : "Personal Portfolio Website",
+        "desc" : "The website you are currently viewing. This is a personal Open Source project to display any revelant information/documentation, projects, and coursework. The site was written in React.js, and can be quickly updated via the Desktop Update Component, written in C++. The site is hosted on AWS through an S3 Bucket.",
+        "lk" : "https://github.com/anderm18/PersonalSite",
+	  "icon" : ["js", "rt", "cp", "aw"]
     }
 
 ]

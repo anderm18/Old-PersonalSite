@@ -1,59 +1,57 @@
 import React from 'react';
-import VideoLooper from 'react-video-looper';
+import FadeIn from 'react-fade-in';
 import projects from "../assets/projects";
 import {Box, Title, Desc} from "./ProjectStyle";
-import {FaCss3Alt, FaHtml5, FaReact, FaCuttlefish, FaPython, FaVuejs, FaAws  } from "react-icons/fa";
+import {FaCss3Alt, FaHtml5, FaReact, FaCuttlefish, FaPython, FaVuejs, FaAws, FaJava } from "react-icons/fa";
 import {SiJavascript, SiNetlify, SiCplusplus, SiJava} from 'react-icons/si';
-import { Icon } from '../components/navbar/Navigation';
-import VideoBg from "reactjs-videobg";
-import vid from '../assets/tri.webm';
-import cover from '../assets/cover.png';
-import {DecryptText as DText } from "../components/textDecrypt/decrypt";
+import {DecryptText} from "../components/textDecrypt/decrypt";
 
-function decodeIcon(icon) {
+export function decodeIcon(icon) {
   if(icon === "rt"){
     return <>&nbsp;<FaReact /></>;
   } else if(icon === "py"){
     return <FaPython />;
   } else if(icon === "vu"){
-    return <FaVuejs/>
+    return <FaVuejs/>;
   } else if(icon === "aw"){
-    return <>&nbsp;<FaAws /></>
+    return <>&nbsp;<FaAws /></>;
   } else if(icon === "ne"){
-    return <>&nbsp;<SiNetlify /></>
+    return <>&nbsp;<SiNetlify /></>;
   } else if(icon == "cp"){
-    return <>&nbsp;<SiCplusplus /></>
+    return <>&nbsp;<SiCplusplus /></>;
   } else if(icon == "cl"){
-    return <FaCuttlefish/>
+    return <FaCuttlefish/>;
   } else if(icon == "ht"){
-    return <FaHtml5/>
+    return <FaHtml5/>;
   } else if(icon == "cs"){
-    return <FaCss3Alt/>
+    return <FaCss3Alt/>;
   } else if(icon == "js"){
-    return <><SiJavascript /></>
+    return <><SiJavascript /></>;
+  } else if(icon == "ja"){
+    return <FaJava/>;
   }
 }
 
 const Projects = () => {
     return(
-      <>
-        <VideoBg poster={cover}>
-          <VideoBg.Source src ={vid} type="video/webm"/>
-        </VideoBg> 
+      <FadeIn transitionDuration={1000}>
         {projects.map(data => (
-         
+          
           <Box href={data.lk}>
             <Title>
-              {data.name} {(data.icon).map(ic => (decodeIcon(ic)))}
+              <DecryptText text={data.name}/>
+              {(data.icon).map(ic => (decodeIcon(ic)))}
+              <Desc>
+                <FadeIn delay={1000} transitionDuration={1000}>
+                  {data.desc}
+                </FadeIn>
+              </Desc>
             </Title>
-            <Desc>
-              {data.desc}
-            </Desc>
           </Box>
   
         ))};
 
-      </>
+      </FadeIn>
         
         
             

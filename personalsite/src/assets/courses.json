@@ -1,0 +1,14 @@
+[
+    {
+        "course": "Principles of Software",
+        "icons": ["ja"],
+        "projects": [
+            {
+                "name":"asdf",
+                "desc":"asdfasdf",
+                "ics": ["ja"]
+            }
+        ]
+
+    }
+]
