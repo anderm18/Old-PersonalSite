@@ -13,6 +13,7 @@ export const Box = styleC.a`
     opacity: .95;
     text-decoration: none;
     color: #000000;
+    overflow: auto;
     border-radius: 25px;
     transition: opacity 0.2s 0.2s;
     cursor: pointer;
@@ -23,9 +24,8 @@ export const Box = styleC.a`
       } 
 `;
 
-export const inBox = styleC.div`
-
-
+export const Margin = styleC.div`
+    margin-bottom: 80px;
 `;
 
 export const Title = styleC.b`

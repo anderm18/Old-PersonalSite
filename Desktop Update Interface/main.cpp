@@ -18,11 +18,49 @@ std::string convertLower(string &userInput){
 std::string substring(string str, string start, string end) {
 
 	std::string temp;
+	
 	for(int i = str.find(start) + start.length(); 
-			i <= str.find(end, str.find(start)+ start.length()); i++){
+			i <= str.find(end, str.find(start)+ start.length()); i++) {
 		temp += str[i];
 	}
+
 	return temp;
+}
+
+
+vector<std::string> toArray(string arrayString) {
+
+	vector<std::string> stringVec; 
+
+	for(int i = 1; i < arrayString.length(); i+=6){
+	
+		stringVec.push_back(arrayString.substr(i, 4));
+		
+	}
+
+	return stringVec;
+}
+
+void editProject(JSON &json){
+
+	string response;
+	std::vector<std::string> tempStore;
+	cout << "Which project would you like to edit: " << endl;
+	string tempString;
+
+	for(int i = 0; i < json.size(); i++) {
+
+		tempString = json[i][0].substr(1, 4);
+		tempStore.push_back(tempString);
+
+		cout << tempString << endl;
+	}
+
+
+
+
+
+
 }
 
 JSON parseProject(std::string filename) {
@@ -31,36 +69,39 @@ JSON parseProject(std::string filename) {
 	JSON data;
 	string line;
 	string jsondata;
+
 	while(jsonFile >> line){ jsondata += line + ' '; }
 
-	line = jsondata.substr(jsondata.find('{'), jsondata.find('}')-1);
-	cout << line;
-	std::vector<std::string> temp;
-	temp.push_back(substring(line, "\"name\" : ", "\","));
-	data.push_back(temp);
-	temp.clear();
-	temp.push_back(substring(line, "\"desc\" : ", "\","));
-	data.push_back(temp);
-	temp.clear();
-	temp.push_back(substring(line, "\"lk\" : ", "\","));
-	data.push_back(temp);
-	string tempStr = substring(line, "\"icon\" : ", "]");
 
-	//write some for loop to convert string to vector, or function idc just go to bed idiot
+	int displace = 0;
+	while(displace != jsondata.length()){
+
+		line = substring(jsondata, "{", "}");
+		cout << line << endl;
+		cout << jsondata.size() << endl;
+		cout << displace << endl;
+
+		std::vector<std::string> temp;
+		std::vector<std::string> tempInner;
+		temp.push_back(substring(line, "\"name\" : ", "\","));
+		temp.push_back(substring(line, "\"desc\" : ", "\","));
+		temp.push_back(substring(line, "\"lk\" : ", "\","));
+		string tempStr = substring(line, "\"icon\" : ", "]");
+		temp.push_back(tempStr);
+
+		data.push_back(temp);
+	}
 
 	return data;
+
 }
-
-
-
-
 
 int main() {
 	
 	std::string action;
 	std::string type;
 
-	cout << "What Would you like to do (Edit/Add/Delte)" << endl;
+	cout << "What Would you like to do (Edit/Add/Delete)" << endl;
 	cin >> action;
 	convertLower(action);
 	cout << "Ok, is this for a Project or a Course?" << endl;
@@ -71,6 +112,9 @@ int main() {
 	if(action == "edit" || action == "e"){
 		if(type == "project" || type == "p"){
 			json = parseProject("projects.json");
+			editProject(json);
+
+
 		} else if (type == "course" || type == "c"){
 
 		} else{
@@ -90,13 +134,5 @@ int main() {
 		std::cerr << "ERROR: Unknown Action '" + action + "' (options edit or e, add or a, delete or d)\n";
 		exit(1);  
 	}
-
-
-
-
-
-	
-
-
 
 }

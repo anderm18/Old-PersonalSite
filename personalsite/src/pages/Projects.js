@@ -1,9 +1,9 @@
 import React from 'react';
 import FadeIn from 'react-fade-in';
 import projects from "../assets/projects";
-import {Box, Title, Desc} from "./ProjectStyle";
+import {Box, Title, Desc, Margin} from "./ProjectStyle";
 import {FaCss3Alt, FaHtml5, FaReact, FaCuttlefish, FaPython, FaVuejs, FaAws, FaJava } from "react-icons/fa";
-import {SiJavascript, SiNetlify, SiCplusplus, SiJava} from 'react-icons/si';
+import {SiJavascript, SiNetlify, SiCplusplus} from 'react-icons/si';
 import {DecryptText} from "../components/textDecrypt/decrypt";
 
 export function decodeIcon(icon) {
@@ -17,17 +17,17 @@ export function decodeIcon(icon) {
     return <>&nbsp;<FaAws /></>;
   } else if(icon === "ne"){
     return <>&nbsp;<SiNetlify /></>;
-  } else if(icon == "cp"){
+  } else if(icon === "cp"){
     return <>&nbsp;<SiCplusplus /></>;
-  } else if(icon == "cl"){
+  } else if(icon === "cl"){
     return <FaCuttlefish/>;
-  } else if(icon == "ht"){
+  } else if(icon === "ht"){
     return <FaHtml5/>;
-  } else if(icon == "cs"){
+  } else if(icon === "cs"){
     return <FaCss3Alt/>;
-  } else if(icon == "js"){
+  } else if(icon === "js"){
     return <><SiJavascript /></>;
-  } else if(icon == "ja"){
+  } else if(icon === "ja"){
     return <FaJava/>;
   }
 }
@@ -35,6 +35,7 @@ export function decodeIcon(icon) {
 const Projects = () => {
     return(
       <FadeIn transitionDuration={1000}>
+       
         {projects.map(data => (
           
           <Box href={data.lk}>
@@ -48,10 +49,13 @@ const Projects = () => {
               </Desc>
             </Title>
           </Box>
+          
   
-        ))};
-
-      </FadeIn>
+        )
+        )};
+        <Margin />
+        </FadeIn>
+    
         
         
             
